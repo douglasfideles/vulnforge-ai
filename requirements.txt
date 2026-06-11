@@ -1,0 +1,45 @@
+# VulnForge AI - dependencias de runtime FIXADAS para reprodutibilidade (SeloR).
+# Geradas a partir do ambiente de referencia testado (Python 3.12, Linux WSL2).
+# Cobre o pipeline minimo offline + extra "traffic" (scapy).
+# A API opcional (FastAPI/uvicorn) instala-se via:  pip install -e ".[api]"
+#
+# Instalacao reprodutivel:
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#   pip install -e .            # registra o entrypoint `protoforge`
+
+# --- nucleo ---
+typer==0.26.7
+pydantic==2.13.4
+pydantic-settings==2.14.1
+pydantic_core==2.46.4
+pandas==3.0.3
+scikit-learn==1.9.0
+joblib==1.5.3
+requests==2.34.2
+PyYAML==6.0.3
+
+# --- extra: traffic (ataques nativos / captura) ---
+scapy==2.7.0
+
+# --- transitivas (fixadas para build determinístico) ---
+annotated-types==0.7.0
+certifi==2026.5.20
+charset-normalizer==3.4.7
+idna==3.18
+markdown-it-py==4.2.0
+mdurl==0.1.2
+narwhals==2.22.1
+numpy==2.4.6
+packaging==26.2
+Pygments==2.20.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+rich==15.0.0
+scipy==1.17.1
+shellingham==1.5.4
+six==1.17.0
+threadpoolctl==3.6.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+urllib3==2.7.0

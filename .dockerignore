@@ -1,0 +1,24 @@
+# Mantem o contexto de build leve e reprodutivel (evita "no space left on device").
+.venv/
+.git/
+.github/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Artefatos de execucao (gerados dentro do container / montados via volume).
+data/runs/
+data/models/
+reports/run-*.md
+scenarios/generated/
+
+# Misc
+.env
+*.joblib
+*.pcap
+.DS_Store
