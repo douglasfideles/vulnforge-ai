@@ -1,0 +1,10 @@
+scenario_id: xrce_dds_replay
+protocol: XRCE-DDS
+attack_type: replay
+duration_seconds: 30
+normal_traffic_command: python -m vulnforge.traffic.attacks.flooding --target 127.0.0.1 --port 8888 --transport udp --rate 5 --duration 25 --benign
+attack_command: python -m vulnforge.traffic.attacks.replay --target 127.0.0.1 --port 8888 --transport udp --pcap data/runs/xrce_dds_normal.pcap --duration 20
+capture_interface: any
+output_pcap: data/runs/xrce_dds_replay.pcap
+label: xrce_dds_replay
+notes: Replay de mensagens previamente capturadas (data/runs/xrce_dds_normal.pcap) contra o agent. Capture o baseline normal antes de rodar.
