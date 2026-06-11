@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- VulnForge AI: artefatos gerados (manter dados de exemplo versionados) ---
+.venv/
+data/vulnforge.db
+data/models/
+data/runs/
+data/*.flows.csv
+data/datasets/example.csv
+data/datasets/example.csv.meta.json
+reports/run-*.md
+scenarios/generated/
+docker/attacks/
+generated/
