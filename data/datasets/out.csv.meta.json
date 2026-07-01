@@ -1,0 +1,11 @@
+{
+  "name": "out",
+  "source_file": "data/flows/example.csv",
+  "rows": 30,
+  "label_column": "label",
+  "labels": [
+    "flooding"
+  ],
+  "created_at": "2026-06-11T23:23:37.452370+00:00",
+  "notes": "Gerado de example.csv com label fixo 'flooding'."
+}

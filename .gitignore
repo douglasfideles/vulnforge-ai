@@ -229,3 +229,5 @@ reports/run-*.md
 scenarios/generated/
 docker/attacks/
 generated/
+/docs
+/reports

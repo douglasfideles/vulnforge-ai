@@ -1,0 +1,14 @@
+scenario_id: sbseg2024_xrce_dds_normal
+protocol: XRCE-DDS
+attack_type: normal
+duration_seconds: 65
+normal_traffic_command: python -m vulnforge.traffic.attacks.flooding --target 127.0.0.1 --port 7400 --transport udp --rate 1 --duration 60 --benign
+attack_command: ""
+capture_interface: lo
+output_pcap: data/sbseg2024/runs/xrce_dds_normal.pcap
+label: normal
+notes: |
+  Replica o cenario normal do testbed SBSeg 2024: sensor IoT publicando dados a 1 Hz
+  para o agente XRCE-DDS via UDP 7400 (RTPS/DDS). Um unico sensor virtual.
+  Para o testbed completo com 3 sensores paralelos, use scripts/sbseg2024/run_testbed.py.
+  Ambiente: loopback (rede isolada virtual).

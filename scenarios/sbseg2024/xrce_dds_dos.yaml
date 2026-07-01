@@ -1,0 +1,15 @@
+scenario_id: sbseg2024_xrce_dds_dos
+protocol: XRCE-DDS
+attack_type: flooding
+duration_seconds: 65
+normal_traffic_command: python -m vulnforge.traffic.attacks.flooding --target 127.0.0.1 --port 7400 --transport udp --rate 1 --duration 10 --benign
+attack_command: python -m vulnforge.traffic.attacks.flooding --target 127.0.0.1 --port 7400 --transport udp --rate 50 --duration 50
+capture_interface: lo
+output_pcap: data/sbseg2024/runs/xrce_dds_dos.pcap
+label: dos
+notes: |
+  Replica o cenario DoS do testbed SBSeg 2024: sensor IoT sem controle de frequencia,
+  inundando o agente XRCE-DDS via UDP 7400 (RTPS/DDS) a 50 pkt/s (equivale ao envio
+  sem throttle dos dispositivos reais). Um unico sensor virtual.
+  Para o testbed completo com 3 sensores paralelos, use scripts/sbseg2024/run_testbed.py.
+  Ambiente: loopback (rede isolada virtual).

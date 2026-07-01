@@ -1,0 +1,11 @@
+{
+  "name": "xrce_dds_dos",
+  "source_file": "data/sbseg2024/runs_v2/xrce_dds_dos_flows.csv",
+  "rows": 15017,
+  "label_column": "label",
+  "labels": [
+    "dos"
+  ],
+  "created_at": "2026-06-25T01:56:34.190177+00:00",
+  "notes": "Gerado de xrce_dds_dos_flows.csv com label fixo 'dos'."
+}

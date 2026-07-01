@@ -1,0 +1,12 @@
+{
+  "name": "xrce_dds_tool",
+  "source_file": "data/sbseg2024/tool/xrce_dds_normal.csv,data/sbseg2024/tool/xrce_dds_dos.csv",
+  "rows": 798,
+  "label_column": "label",
+  "labels": [
+    "dos",
+    "normal"
+  ],
+  "created_at": "2026-06-23T12:44:25.820127+00:00",
+  "notes": "Merge de datasets rotulados."
+}
