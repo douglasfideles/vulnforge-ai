@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vulnforge-ai"
+version = "1.0.0"
+description = "Offline-first, controlled IoT protocol security research pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0-or-later" }
+dependencies = [
+  "typer==0.15.2",
+  "click==8.1.8",
+  "pydantic==2.10.6",
+  "pydantic-settings==2.7.1",
+  "numpy==2.2.2",
+  "pandas==2.2.3",
+  "scipy==1.15.1",
+  "scikit-learn==1.6.1",
+  "joblib==1.4.2",
+  "requests==2.32.3",
+  "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+api = ["fastapi==0.115.8", "uvicorn==0.34.0"]
+traffic = ["scapy==2.6.1"]
+dev = ["pytest==8.3.4", "httpx==0.28.1", "anyio==4.8.0"]
+zenoh = ["eclipse-zenoh==1.2.1"]
+dds = ["cyclonedds==0.10.5"]
+
+[project.scripts]
+protoforge = "vulnforge.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

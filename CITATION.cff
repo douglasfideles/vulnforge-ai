@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Se você utilizar este artefato, cite o artigo e a release arquivada."
+title: "VulnForge AI"
+type: software
+version: 1.0.0
+date-released: 2026-07-02
+license: GPL-3.0-or-later
+authors:
+  - family-names: "TODO"
+    given-names: "Autores"
+repository-code: "https://TODO/URL-ESTAVEL"
+abstract: >-
+  Pipeline offline-first para geração controlada de cenários de segurança,
+  datasets rotulados e baselines IDS para DDS, XRCE-DDS e Zenoh.
+

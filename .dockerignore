@@ -1,0 +1,12 @@
+.venv/
+.git/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+data/
+reports/
+results/
+generated/
+*.pcap
+*.joblib

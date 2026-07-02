@@ -1,0 +1,10 @@
+[
+  {
+    "cve": "CVE-DEMO-0001",
+    "name": "XRCE-DDS agent resource exhaustion",
+    "summary": "A UDP flood can cause denial of service and resource exhaustion in an XRCE-DDS agent.",
+    "score": "7.5",
+    "product": "Micro XRCE-DDS Agent"
+  }
+]
+

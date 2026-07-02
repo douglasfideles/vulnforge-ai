@@ -1,0 +1,10 @@
+services:
+  vulnforge:
+    build: .
+    environment:
+      VULNFORGE_LLM_PROVIDER: offline
+    volumes:
+      - ./data:/app/data
+      - ./scenarios:/app/scenarios
+      - ./reports:/app/reports
+
