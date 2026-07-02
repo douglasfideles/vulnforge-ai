@@ -1,0 +1,6 @@
+flow_id,src_ip,dst_ip,src_port,dst_port,protocol,flow_duration,total_fwd_packets,total_bwd_packets,total_fwd_bytes,total_bwd_bytes,fwd_packet_length_mean,bwd_packet_length_mean,flow_bytes_s,flow_packets_s,label
+1,127.0.0.1,127.0.0.1,12345,8888,UDP,1.0,10,5,1500,750,150.0,150.0,2250.0,15.0,flooding
+2,127.0.0.1,127.0.0.1,12346,8888,UDP,1.0,20,10,3000,1500,150.0,150.0,4500.0,30.0,flooding
+3,127.0.0.1,127.0.0.1,12347,8888,UDP,2.0,15,8,2250,1200,150.0,150.0,1725.0,11.5,flooding
+4,127.0.0.1,127.0.0.1,12348,8888,UDP,1.5,25,12,3750,1800,150.0,150.0,3700.0,24.67,flooding
+5,127.0.0.1,127.0.0.1,12349,8888,UDP,1.0,8,4,1200,600,150.0,150.0,1800.0,12.0,flooding

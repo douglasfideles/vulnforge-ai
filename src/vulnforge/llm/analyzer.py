@@ -71,6 +71,10 @@ def analyze(text: str, protocol_hint: str | None = None, adapter: LLMAdapter | N
         return rules_analyze(text, protocol_hint)
 
 
-def analyze_vuln(vuln: Vulnerability, protocol_hint: str | None = None, adapter: LLMAdapter | None = None) -> ThreatAnalysis:
+def analyze_vuln(
+    vuln: Vulnerability,
+    protocol: str | None = None,
+    adapter: LLMAdapter | None = None,
+) -> ThreatAnalysis:
     """Analyze a stored vulnerability record."""
-    return analyze(vuln_to_text(vuln), protocol_hint=protocol_hint, adapter=adapter)
+    return analyze(vuln_to_text(vuln), protocol_hint=protocol, adapter=adapter)

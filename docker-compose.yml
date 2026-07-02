@@ -1,0 +1,9 @@
+services:
+  vulnforge:
+    build: .
+    network_mode: host
+    volumes:
+      - ./data:/app/data
+      - ./scenarios:/app/scenarios
+      - ./reports:/app/reports
+    command: ["bash", "scripts/run-minimal.sh"]
