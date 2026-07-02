@@ -1,5 +1,6 @@
 # Mantem o contexto de build leve e reprodutivel (evita "no space left on device").
 .venv/
+.venv-clean/
 .git/
 .github/
 __pycache__/
@@ -12,13 +13,18 @@ build/
 dist/
 
 # Artefatos de execucao (gerados dentro do container / montados via volume).
+data/vulnforge.db
 data/runs/
 data/models/
 reports/run-*.md
 scenarios/generated/
+generated/
+docker/attacks/
 
 # Misc
 .env
+.env.example
 *.joblib
 *.pcap
+.pcapng
 .DS_Store
