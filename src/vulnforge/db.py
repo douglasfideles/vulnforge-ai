@@ -1,4 +1,9 @@
-"""SQLite persistence layer with idempotent schema initialization."""
+"""SQLite persistence layer with idempotent schema initialization.
+
+The connection factory ensures the parent directory exists, enables
+``row_factory = Row`` for dict-like access, and applies lightweight
+migrations so existing databases gain new columns transparently.
+"""
 
 from __future__ import annotations
 
@@ -69,7 +74,14 @@ def _ensure_parent(path: Path) -> None:
 
 
 def get_connection(db_path: str | None = None) -> sqlite3.Connection:
-    """Open a SQLite connection, ensuring schema and migrations are applied."""
+    """Open a SQLite connection, ensuring schema and migrations are applied.
+
+    Args:
+        db_path: Optional explicit database path. Defaults to ``settings.db_path``.
+
+    Returns:
+        A configured ``sqlite3.Connection`` with row_factory set to ``Row``.
+    """
     if db_path is None:
         db_path = get_settings().db_path
     path = Path(db_path)

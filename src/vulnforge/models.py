@@ -1,4 +1,10 @@
-"""Pydantic v2 data models for VulnForge AI."""
+"""Pydantic v2 data models for VulnForge AI.
+
+This module defines the central contracts used across the pipeline:
+vulnerability records, threat analyses, scenarios, dataset metadata,
+run records, health probes and effect reports. All models enforce
+canonical constraints from the REQUIREMENTS.md specification.
+"""
 
 from __future__ import annotations
 

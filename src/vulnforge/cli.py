@@ -1,4 +1,10 @@
-"""Command-line interface entry point for protoforge."""
+"""Command-line interface entry point for protoforge.
+
+This module exposes the ``protoforge`` console script built with Typer.
+Each command maps to one stage of the VulnForge pipeline:
+vulnerability ingestion, threat analysis, scenario generation, execution,
+dataset building, IDS training, reporting and attack synthesis.
+"""
 
 from __future__ import annotations
 
@@ -26,6 +32,7 @@ log = get_logger(__name__)
 
 
 def _apply_model_overrides(provider: str | None, model: str | None) -> None:
+    """Override LLM provider/model in the process-singleton settings."""
     settings = get_settings()
     if provider:
         settings.llm_provider = provider
@@ -35,6 +42,7 @@ def _apply_model_overrides(provider: str | None, model: str | None) -> None:
 
 @app.callback()
 def _main() -> None:
+    """Initialize logging before every command."""
     setup_logging(get_settings().log_level)
 
 
@@ -87,7 +95,7 @@ def analyze(
         finally:
             conn.close()
     elif text:
-        result = analyzer.analyze(text, protocol=protocol)
+        result = analyzer.analyze(text, protocol_hint=protocol)
     else:
         raise typer.BadParameter("Informe --vuln-id ou --text.")
     typer.echo(json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False))
